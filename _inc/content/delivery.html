@@ -1,0 +1,57 @@
+    {% set multipleChoiceArray = "" %}
+    {% set entries = craft.entries.section('placeDelivery') %}
+
+    {% for entry in entries %}
+        {% set multipleChoiceArray = multipleChoiceArray ~ entry.title ~ '*' ~ entry.placeDeliveryAddress.lat ~ '*' ~ entry.placeDeliveryAddress.lng ~ '*' ~ entry.placeDeliveryDays.value ~ '*' ~ entry.deliveryAddress|nl2br ~ '*' ~ entry.placeDeliveryDays.label ~ '*'%} 
+        {%if(loop.index != loop.last)%}
+            {% set multipleChoiceArray = multipleChoiceArray ~ " | " %}
+        {% endif %}
+    {% endfor %}
+
+    <p class="c-array">{{multipleChoiceArray}}</p>
+
+
+
+<section class="c-section c-delivery c-border">
+	<div class="c-background -two">
+		<div class="o-wrapper">
+			<div class="c-page_wrap">
+				<div class="o-wrap-four">
+					<div class="o-layout o-layout--huge">
+						<div class="o-layout__item c-contact_info u-1/2">
+							<h1>{{entry.title}}</h1>
+							<ul class="o-list-bare c-delivery_ul">
+								{% set count = 0 %}
+							{% for block in entry.days %}
+
+							    {% if block.type == "daysTab" %}
+<li>
+							        <p class="u-bold">{{ block.dayName }}</p>
+							        {{block.dayContent}}
+	
+
+</li>
+							    {% endif %}
+
+							{% endfor %}
+							</ul>
+							<div class="u-bold">
+							{{entry.deliveryMessage}}					
+							</div>
+							                        <ul id="js-scrollbar" class="o-list-bare c-list-point container"></ul>
+
+						</div>
+						<div class="o-layout__item u-1/2">
+							<div id="google-map"></div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

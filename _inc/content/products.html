@@ -1,0 +1,59 @@
+<section class="c-section c-our-products c-border">
+	<div class="c-background -sb">
+        <div class="c-products">
+        	<div class="o-wrapper">
+            	<div class="c-page_wrap">
+				    <div class="o-wrap-six">
+            			<h2 class="c-page-title"></h2>
+            		</div>        	
+                </div>
+            </div>
+            <div class="o-wrapper">
+            	<div class="c-oif c-page-padding_two">
+				    <div class="o-wrap-six">
+                        <div class="o-layout o-layout--huge">
+                            <div class="c-sidebar o-layout__item u-2/5">
+                                <div id="my-search-4227048">
+                                    <script type="text/javascript" src="https://app.ecwid.com/script.js?4227048 " charset="utf-8"></script>
+                                    <script type="text/javascript"> xSearch("id=my-search-4227048","categoriesPerRow=2","views=grid(5,2) list(10) table(10)","categoryView=grid"); </script>
+                                </div>
+                                <div class="c-products_categories_nav">
+                                    <h3>Categories of products</h3>
+                                    {% set pages = craft.entries.section('menuProducts').all() %}
+                                    <nav class="c-products_categories">
+                                        <ul>
+                                            {% nav page in pages %}
+                                                <li>
+                                                    {% if page.menuProjectsId|length %}
+                                                    <a href="http://valens.test/nos-produits?store-page={{ page.menuProjectsId }}"> {{ page.title }}</a>
+                                                    {% else %}
+                                                    <p class="c-parent">{{ page.title }}</p>                                                    
+                                                    {% endif %}
+            	                                   {% ifchildren %}
+                                                        <ul>
+                                                            {% children %}
+                                                        </ul>
+                                                    {% endifchildren %}
+                                                </li>
+                                            {% endnav %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="c-product_info o-layout__item"> 
+                                {% if currentSite.language == "fr" %}
+                                    <script type="text/javascript" src="https://app.ecwid.com/script.js?4227048" charset="utf-8"></script>
+                                    <script type="text/javascript"> xProductBrowser("categoriesPerRow=2","views=grid(100,2) list(10) table(10)","categoryView=grid","defaultCategoryId=10628227","searchView=list","id=my-store-4227048");</script>
+                                {% else %}
+                                    <script type="text/javascript" src="https://app.ecwid.com/script.js?4227048" charset="utf-8"></script>
+                                    <script type="text/javascript"> xProductBrowser("categoriesPerRow=2","views=grid(100,2) list(10) table(10)","categoryView=grid","defaultCategoryId=10746129","searchView=list","id=my-store-4227048");</script>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	   </div>
+    </div>
+</section>
+

@@ -1,0 +1,8 @@
+{% extends "_layout/site" %}
+    {% block content %}
+        {% include "_inc/ecwid/ecwid-single-products" %}
+        {% include "_inc/content/text-image" with {'pageType':'-home'} %}
+        {% include "_inc/global/shipping" %}
+        {% include "_inc/content/img-txt" with {'pageType':'-home','bg':'-two'}%}        
+        {% include "_inc/content/newsletter" %}
+    {% endblock %}

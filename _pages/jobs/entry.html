@@ -1,0 +1,83 @@
+{% extends "_layout/site" %}
+    {% block content %}
+        {% include "_inc/content/single-job" %}
+
+<section class="c-form -job">
+	<div class="c-background -three">
+
+		<div class="o-wrapper">
+				<div class="o-wrap-five">		
+					<h2>Postuler pour ce poste</h2>
+	<form class="c-form_form -career" method="post" action="" accept-charset="UTF-8" enctype="multipart/form-data">
+	    {{ csrfInput() }}
+	    <input type="hidden" name="action" value="contact-form/send">
+	    {{ redirectInput('contact/thanks') }}
+
+	    <label for="from-name">{{"Name"|t}}</label>
+	    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" required>
+
+	    <label for="from-email">{{"Email"|t}}</label>
+	    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" required>
+
+
+	    <label for="phone">{{"Phone"|t}}</label>
+	    <input id="phone" type="text" name="message[Phone]" value="{{ message.fromEmail ?? '' }}" required>
+
+
+		    <label for="attachment">{{"Join your resume"|t}}</label>
+			<div class="c-file -cv">
+				<div class="c-file-upload -cv">
+						<div class="c-file-select">
+						<div class="c-file-select-name" id="noFile-cv">{{"Choose..."|t}}</div> 
+						<div class="c-file-select-button" id="fileName-cv">
+<svg width="32px" height="30px" viewBox="0 0 32 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>upload</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="livraison" transform="translate(-1068.000000, -2849.000000)" fill="#000000">
+            <g id="upload" transform="translate(1068.000000, 2849.000000)">
+                <path d="M31.0305085,14.4508475 C30.5220339,14.4508475 30.1152542,14.8576271 30.1152542,15.3661017 L30.1152542,23.6915254 C30.1152542,25.9559322 28.2711864,27.7932203 26.0135593,27.7932203 L5.93220339,27.7932203 C3.66779661,27.7932203 1.83050847,25.9491525 1.83050847,23.6915254 L1.83050847,15.2305085 C1.83050847,14.7220339 1.42372881,14.3152542 0.915254237,14.3152542 C0.406779661,14.3152542 0,14.7220339 0,15.2305085 L0,23.6915254 C0,26.9661017 2.66440678,29.6237288 5.93220339,29.6237288 L26.0135593,29.6237288 C29.2881356,29.6237288 31.9457627,26.959322 31.9457627,23.6915254 L31.9457627,15.3661017 C31.9457627,14.8644068 31.5389831,14.4508475 31.0305085,14.4508475 Z" id="Path"></path>
+                <path d="M10.8,7.4 L15.0576271,3.14237288 L15.0576271,21.7118644 C15.0576271,22.220339 15.4644068,22.6271186 15.9728814,22.6271186 C16.4813559,22.6271186 16.8881356,22.220339 16.8881356,21.7118644 L16.8881356,3.14237288 L21.1457627,7.4 C21.3220339,7.57627119 21.559322,7.67118644 21.7898305,7.67118644 C22.0271186,7.67118644 22.2576271,7.58305085 22.4338983,7.4 C22.7932203,7.04067797 22.7932203,6.46440678 22.4338983,6.10508475 L16.6169492,0.288135593 C16.4474576,0.118644068 16.2101695,0.0169491525 15.9728814,0.0169491525 C15.7288136,0.0169491525 15.4983051,0.111864407 15.3288136,0.288135593 L9.51186441,6.10508475 C9.15254237,6.46440678 9.15254237,7.04067797 9.51186441,7.4 C9.86440678,7.75254237 10.4474576,7.75254237 10.8,7.4 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>    	       	
+						</div>
+						<input type="file" name="attachment" id="chooseFile-cv" accept="application/pdf" data-parsley-required="true" required>
+						</div>
+				</div>
+			</div>
+
+<label for="attachmentTwo">{{"Attach your cover letter (optional)"|t}}</label>
+			<div class="c-file-upload -letter">
+					<div class="c-file-select">
+					<div class="c-file-select-name" id="noFile-letter">{{"Choose..."|t}}</div> 
+					<div class="c-file-select-button" id="fileName-letter">
+<svg width="32px" height="30px" viewBox="0 0 32 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>upload</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="livraison" transform="translate(-1068.000000, -2849.000000)" fill="#000000">
+            <g id="upload" transform="translate(1068.000000, 2849.000000)">
+                <path d="M31.0305085,14.4508475 C30.5220339,14.4508475 30.1152542,14.8576271 30.1152542,15.3661017 L30.1152542,23.6915254 C30.1152542,25.9559322 28.2711864,27.7932203 26.0135593,27.7932203 L5.93220339,27.7932203 C3.66779661,27.7932203 1.83050847,25.9491525 1.83050847,23.6915254 L1.83050847,15.2305085 C1.83050847,14.7220339 1.42372881,14.3152542 0.915254237,14.3152542 C0.406779661,14.3152542 0,14.7220339 0,15.2305085 L0,23.6915254 C0,26.9661017 2.66440678,29.6237288 5.93220339,29.6237288 L26.0135593,29.6237288 C29.2881356,29.6237288 31.9457627,26.959322 31.9457627,23.6915254 L31.9457627,15.3661017 C31.9457627,14.8644068 31.5389831,14.4508475 31.0305085,14.4508475 Z" id="Path"></path>
+                <path d="M10.8,7.4 L15.0576271,3.14237288 L15.0576271,21.7118644 C15.0576271,22.220339 15.4644068,22.6271186 15.9728814,22.6271186 C16.4813559,22.6271186 16.8881356,22.220339 16.8881356,21.7118644 L16.8881356,3.14237288 L21.1457627,7.4 C21.3220339,7.57627119 21.559322,7.67118644 21.7898305,7.67118644 C22.0271186,7.67118644 22.2576271,7.58305085 22.4338983,7.4 C22.7932203,7.04067797 22.7932203,6.46440678 22.4338983,6.10508475 L16.6169492,0.288135593 C16.4474576,0.118644068 16.2101695,0.0169491525 15.9728814,0.0169491525 C15.7288136,0.0169491525 15.4983051,0.111864407 15.3288136,0.288135593 L9.51186441,6.10508475 C9.15254237,6.46440678 9.15254237,7.04067797 9.51186441,7.4 C9.86440678,7.75254237 10.4474576,7.75254237 10.8,7.4 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>    	
+					</div>
+					<input type="file" name="attachment" id="chooseFile-letter" accept="application/pdf">
+					</div>
+
+			</div>
+
+			<div class="c-submit">
+			<input type="submit" value="{{'Send'|t}}" class="c-btn c-btn--fourth">
+			<div class="c-submit_icon"></div>
+			</div>
+	</form>
+</div></div></div>
+</section>        
+    {% endblock %}

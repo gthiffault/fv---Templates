@@ -1,0 +1,57 @@
+{# DECLARATION #}
+	{% set program = "" %}
+{# ASIGNATION #}
+	{% set program = craft.entries.section('availablesJobs').all() %}
+{# CODE #}
+<section class="c-section c-job-information c-border">
+	<div class="c-background">
+
+     
+        
+        	            				<div class="o-wrapper">
+            	<div class="c-page_wrap">
+
+				<div class="o-wrap-one">
+												<h1>{{entry.title}}</h1>
+		<div class="o-wrap">
+			{% if entry.jobDateEntry|length or entry.jobNumberJobs|length or entry.jobNumberJobs|length or entry.jobSalary|length or entry.jobWorTimetable|length or entry.jobEmploymentStatus|length or entry.jobShift|length %}			
+				<div class="c-job-information_div">
+					<h2>Description du poste</h2>
+					<ul class="o-list-bare c-job-information_ul">
+					{% if entry.jobDateEntry|length %}<li><span>Date d'entrée en fonction :</span> {{entry.jobDateEntry}}</li>{% endif %}
+					{% if entry.jobBumberPosition|length %}<li><span>Nombre de poste(s) à combler :</span> {{entry.jobBumberPosition}}</li>{% endif %}
+					{% if entry.jobSalary|length %}<li><span>Salaire :</span> {{entry.jobSalary}}</li>{% endif %}
+					{% if entry.jobWorkTimetable|length %}<li><span>Horaire de travail :</span> {{entry.jobWorkTimetable}}</li>{% endif %}
+					{% if entry.jobEmploymentStatus|length %}<li><span>Statut de l'emploi :</span> {{entry.jobEmploymentStatus}}</li>{% endif %}
+					{% if entry.jobShift|length %}<li><span>Quart de travail :</span> {{entry.jobShift}}</li>{% endif %}
+					</ul>
+				</div>
+			{% endif %}			
+			{% if entry.jobResponsibilities|length %}
+				<div class="c-job-information_div -content">						
+					<h2>Responsabilités</h2>
+					{{entry.jobResponsibilities}}
+				</div>
+			{% endif %}
+			{% if entry.jobRequirementsContent|length or entry.jobLevelStudies|length or entry.jobDiploma|length or entry.jobYearsExperience|length %}
+				<div class="c-job-information_div">						
+					<h2>Exigences</h2>
+					<ul class="o-list-bare c-job-information_ul">
+					<li><span>Niveau d'études :</span> {{entry.jobLevelStudies}}</li>
+					<li><span>Diplôme :</span> {{entry.jobDiploma}}</li>
+					<li><span>Années d'expérience :</span> {{entry.jobYearsExperience}}</li>				
+					</ul>		
+					<div class="-content">
+					{{entry.jobRequirementsContent}}
+					</div>
+				</div>
+			{% endif %}					
+			{% if entry.jobOtherInformationsContent|length %}
+				<div class="c-job-information_div -content">						
+					<h2>Autres renseignements</h2>
+					{{entry.jobOtherInformationsContent}}
+				</div>
+			{% endif %}
+		</div>
+	</div></div></div></div>
+</section>

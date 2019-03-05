@@ -1,0 +1,28 @@
+<section class="c-txt-img c-border">
+    <div class="c-txt-img_wrap -img c-background {{bg}} {{pageType}}">
+        <div class="o-wrapper">         
+            {% if pageType == '-page' %} {# if entry is a page #}
+                <div class="c-page-padding_two">
+                    <div class="o-wrap-zero">
+            {% endif%}
+            <div class="c-txt-img_txt {% if pageType == '-page' or pageType == '-delivery-two' %}u-3/5{% else %}u-1/2{% endif %} -img">
+                <div class="c-txt-img_txt_content -img">
+                    <h2 class="">{{entry.imgTxtTitle}}</h2>
+                    {{entry.imgTxtContent}}
+                    {% if entry.id == 41 %}
+                        <p class="c-state">Veuillez entrer votre Code postal</p>
+                        <input id="zip" type="text" data-inputmask-regex="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                        <p class="c-zip-code">{{entry.zipCodeList}}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% if pageType == '-page' %} {# if entry is a page #}
+                    </div> {# o-wraper-zero #}
+                </div> {# c-padding-two #}
+            {% endif%}   
+        </div>
+   		<div class="u-3/5">
+   			<div class="c-txt-img_img {{pageType}}" style="background: url({{entry.imgTxtImage.one().url()}})" aria-label="{{entry.imgTxtImage.one().title}}"></div>
+   		</div>	
+    </div>
+</section>

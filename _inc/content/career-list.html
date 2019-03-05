@@ -1,0 +1,29 @@
+{# DECLARATION #}
+	{% set program = "" %}
+{# ASIGNATION #}
+	{% set program = craft.entries.section('availablesJobs').all() %}
+{# CODE #}
+<section class="c-section c-career-list">
+	<div class="c-background">
+       	<div class="o-wrapper">
+           	<div class="c-page_wrap">
+				<div class="o-wrap-one">
+					<h2>{{'Jobs posted'|t}}</h2>
+					<ul class="o-list-bare c-jobs-available_ul">
+						{% nav entry in program %}
+							<li class="">
+								<div class="c-jobs-available_clickable"> 
+									<a href="{{entry.url()}}"><h3>{{entry.title}}</h3></a>
+									<div class="c-jobs-available_box">
+										<div class="c-jobs-available_arrow"></div>
+									</div>
+								</div>
+							</li>
+						{% endnav %}
+					</ul>					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

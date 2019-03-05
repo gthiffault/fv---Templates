@@ -1,0 +1,26 @@
+<section class="c-txt-img c-border">
+    <div class="c-txt-img_wrap -txt {{pageType}}">
+        <div class="o-wrapper">
+            {% if pageType == '-page' or pageType == '-delivery' %} {# if entry is a page #}
+                <div class="c-page-padding_two">
+                    <div class="o-wrap-zero">
+            {% endif%}
+
+            <div class="c-txt-img_txt -txt {% if pageType == '-page' %}u-3/5{% elseif pageType == '-delivery' %}u-3/4{% else %}u-1/2{% endif%}">
+                <div class="c-txt-img_txt_content -txt">
+                    <h2 class="">{{entry.txtImgTitle}}</h2>
+                    {{entry.txtImgContent}}
+                </div>
+            </div>
+            {% if pageType == '-page' or pageType == '-delivery' %} {# if entry is a page #}
+                    </div> {# o-wraper-zero #}
+                </div> {# c-padding-two #}
+            {% endif%}            
+        </div>
+        <div class="o-layout o-layout--reverse">
+       	  	<div class="o-layout__item u-3/5">
+       			<div class="c-txt-img_img {{pageType}}" style="background: url({{entry.txtImgImage.one().url()}})"></div>
+            </div>	
+       </div>
+    </div>
+</section>

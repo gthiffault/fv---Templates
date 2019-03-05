@@ -1,0 +1,8 @@
+<{{type}} class="c-content">
+	{% if type != "div"%} 
+	<div class="o-wrapper">
+		<h2>{{entry.contentTitle}}</h2>{% else %}{% endif %}
+		{{entry.contentContent}}
+		{% if type != "div"%} 
+	</div>{% endif %}
+</{{type}}>
