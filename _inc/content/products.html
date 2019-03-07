@@ -25,7 +25,7 @@
                                             {% nav page in pages %}
                                                 <li>
                                                     {% if page.menuProjectsId|length %}
-                                                    <a href="http://valens.test/nos-produits?store-page={{ page.menuProjectsId }}"> {{ page.title }}</a>
+                                                    <a href="{{ craft.app.sites.primarySite.baseUrl }}nos-produits?store-page={{ page.menuProjectsId }}"> {{ page.title }}</a>
                                                     {% else %}
                                                     <p class="c-parent">{{ page.title }}</p>                                                    
                                                     {% endif %}
