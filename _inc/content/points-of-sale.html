@@ -1,5 +1,5 @@
     {% set multipleChoiceArray = "" %}
-    {% set entries = craft.entries.section('placeDelivery').all() %}
+    {% set entries = craft.entries.section('placeDelivery').order('title').all() %}
 
     {% for entry in entries %}
         {% set multipleChoiceArray = multipleChoiceArray ~ entry.title ~ '*' ~ entry.placeDeliveryAddress.lat ~ '*' ~ entry.placeDeliveryAddress.lng ~ '*' ~ entry.placeDeliveryDays.value ~ '*' ~ entry.deliveryAddress|nl2br ~ '*' ~ entry.placeDeliveryDays.label ~ '*' ~ "Voir sur la carte	" ~ '*' %} 
