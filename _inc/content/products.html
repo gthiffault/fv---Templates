@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="c-products_categories_nav">
                                     <h3>Categories of products</h3>
-                                    {% set pages = craft.entries.section('menuProducts').order('title').all() %}
+                                    {% set pages = craft.entries.section('menuProducts').all() %}
                                     <nav class="c-products_categories">
                                         <ul>
                                             {% nav page in pages %}
