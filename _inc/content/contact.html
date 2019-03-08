@@ -6,16 +6,16 @@
 						<div class="o-layout c-contact_block">
 							<div class="o-layout__item c-contact_info u-1/2">
 								<h1>{{entry.title}}</h1>
+								<h3>{{siteName}}</h3>
 								<p>
-									{{siteName}}
-									<br>{{global.infoHeadOffice|raw}}
+									{{global.infoHeadOffice|raw}}
 								</p> 
 								<p><a href="mailto:{{global.infoEmail}}">{{global.infoEmail}}</a>
 								<br>{{global.infoPhone}}</p>	
-								<p class="c-footer_title">{{"Business hours"|t}}</p>
+								<h3 class="c-footer_title">{{"Business hours"|t}}</h3>
 								<p>{{"Monday to Friday: "|t}}{{global.infoBusinessHoursMF}}
 								<br>{{"Saturday and Sunday: "|t}}{{global.infoBusinessHoursSS}}</p>
-								<a>Consultez nos horaires de livraison.</a>							
+								<a href="{{global.deliveryLinkF.getUrl()}}">Consultez nos horaires de livraison.</a>							
 							</div>
 							<div class="o-layout__item u-1/2">
 								<div id="google-map"></div>
@@ -33,7 +33,9 @@
 	<div class="c-background -three">
 		<div class="o-wrapper">
 				<div class="o-wrap-five">		
+
 	<form class="c-form_form -contact" method="post" action="" accept-charset="UTF-8">
+		<h2>{{"Write us"|t}}</h2>
     {{ csrfInput() }}
     <input type="hidden" name="action" value="contact-form/send">
     {{ redirectInput('contact/thanks') }}
