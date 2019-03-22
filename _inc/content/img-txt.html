@@ -1,11 +1,14 @@
 <section class="c-txt-img c-border">
     <div class="c-txt-img_wrap -img c-background {{bg}} {{pageType}}">
+                <div class="u-3/5@landscape-medium-tablet">
+            <div class="c-txt-img_img {{pageType}}" style="background: url({{entry.imgTxtImage.one().url()}})" aria-label="{{entry.imgTxtImage.one().title}}"></div>
+        </div>  
         <div class="o-wrapper">         
             {% if pageType == '-page' %} {# if entry is a page #}
                 <div class="c-page-padding_two">
                     <div class="o-wrap-zero">
             {% endif%}
-            <div class="c-txt-img_txt {% if pageType == '-page' or pageType == '-delivery-two' %}u-3/5{% else %}u-1/2{% endif %} -img">
+            <div class="c-txt-img_txt {% if pageType == '-page' or pageType == '-delivery-two' %}u-3/5@landscape-medium-tablet{% else %}u-1/2@landscape-medium-tablet{% endif %} -img">
                 <div class="c-txt-img_txt_content -img">
                     <h2 class="">{{entry.imgTxtTitle}}</h2>
                     {{entry.imgTxtContent}}
@@ -21,8 +24,6 @@
                 </div> {# c-padding-two #}
             {% endif%}   
         </div>
-   		<div class="u-3/5">
-   			<div class="c-txt-img_img {{pageType}}" style="background: url({{entry.imgTxtImage.one().url()}})" aria-label="{{entry.imgTxtImage.one().title}}"></div>
-   		</div>	
+
     </div>
 </section>

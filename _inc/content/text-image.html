@@ -6,7 +6,7 @@
                     <div class="o-wrap-zero">
             {% endif%}
 
-            <div class="c-txt-img_txt -txt {% if pageType == '-page' %}u-3/5{% elseif pageType == '-delivery' %}u-3/4{% else %}u-1/2{% endif%}">
+            <div class="c-txt-img_txt -txt {% if pageType == '-page' %}u-3/5@landscape-medium-tablet{% elseif pageType == '-delivery' %}u-3/4@landscape-medium-tablet{% else %}u-1/2@landscape-medium-tablet{% endif%}">
                 <div class="c-txt-img_txt_content -txt">
                     <h2 class="">{{entry.txtImgTitle}}</h2>
                     {{entry.txtImgContent}}
@@ -18,7 +18,7 @@
             {% endif%}            
         </div>
         <div class="o-layout o-layout--reverse">
-       	  	<div class="o-layout__item u-3/5">
+       	  	<div class="o-layout__item u-3/5@landscape-medium-tablet">
        			<div class="c-txt-img_img {{pageType}}" style="background: url({{entry.txtImgImage.one().url()}})"></div>
             </div>	
        </div>

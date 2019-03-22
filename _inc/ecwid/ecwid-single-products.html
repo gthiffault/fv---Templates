@@ -5,7 +5,7 @@
             <ul class="o-layout o-layout c-home_special">
                 {% for special in entry.specialsMonth.all %}
                     {% if special.type == "specialsMonthTab" %}
-                        <li class="o-layout__item u-1/5">
+                        <li class="o-layout__item">
 <div class="ecwid ecwid-SingleProduct-v2 ecwid-SingleProduct-v2-centered ecwid-Product ecwid-Product-{{special.specialsMonthIDs}}" itemscope itemtype="http://schema.org/Product" data-single-product-id="{{special.specialsMonthIDs}}">
 <a class="c-home_special_link" href="{{ craft.app.sites.primarySite.baseUrl }}nos-produits?store-page={{special.specialsMonthTitle|kebab|striptags|raw}}-p{{special.specialsMonthIDs}}">
 <div itemprop="image"></div>
@@ -15,7 +15,7 @@
                             <div customprop="options"></div><div class="c-add" customprop="addtobag"></div>
                         </div></div>
                         </li>
-                        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?4227048&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>    
+   
                     {% endif %}
                 {% endfor %}
             </ul> 
