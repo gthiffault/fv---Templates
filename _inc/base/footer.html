@@ -1,4 +1,4 @@
-<footer class="c-footer">
+<footer class="c-footer c-border">
 	<div class="c-footer_wrap">
 		<div class="o-wrapper">
 			<div class="c-grid">
@@ -13,8 +13,8 @@
 				</div>
 				<div class="c-grid_item -three">
 					<p class="c-footer_title">{{"Business hours"|t}}</p>
-					<p>{{"Monday to Friday: "|t}}{{global.infoBusinessHoursMF}}
-					<br>{{"Saturday and Sunday: "|t}}{{global.infoBusinessHoursSS}}</p>
+					<p>{{"Monday to Friday: "|t}}<span class="c-businessHours">{{global.infoBusinessHoursMF}}</span>
+					<br>{{"Saturday and Sunday: "|t}}<span class="c-businessHours">{{global.infoBusinessHoursSS}}</span></p>
 					<a href="{{global.deliveryLinkF.getUrl()}}">Consultez nos horaires de livraison.</a>
 				</div>
 				<div class="c-grid_item -four">

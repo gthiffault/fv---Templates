@@ -7,8 +7,9 @@
 
 		<div class="o-wrapper">
 				<div class="o-wrap-five">		
-					<h2>Postuler pour ce poste</h2>
+					
 	<form class="c-form_form -career" method="post" action="" accept-charset="UTF-8" enctype="multipart/form-data">
+		<h2>Postuler pour ce poste</h2>
 	    {{ csrfInput() }}
 	    <input type="hidden" name="action" value="contact-form/send">
 	    {{ redirectInput('contact/thanks') }}
