@@ -1,8 +1,10 @@
 <section class="c-txt-img c-border">
     <div class="c-txt-img_wrap -img c-background {{bg}} {{pageType}}">
-                <div class="u-3/5@landscape-medium-tablet">
+        <div class="u-3/5@landscape-medium-tablet c-bg_desktop">
             <div class="c-txt-img_img {{pageType}}" style="background: url({{entry.imgTxtImage.one().url()}})" aria-label="{{entry.imgTxtImage.one().title}}"></div>
         </div>  
+               <img class="c-img_device" src="{{entry.imgTxtImage.one().url()}}" alt="{{entry.imgTxtImage.one().title}}">
+
         <div class="o-wrapper">         
             {% if pageType == '-page' %} {# if entry is a page #}
                 <div class="c-page-padding_two">
