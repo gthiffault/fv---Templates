@@ -36,6 +36,11 @@
 						<div class="c-header_nav">
 							<div class="c-header_nav_item -first-menu">
 								{% if entry.type == "homePage" %}
+
+								<a href="{{ craft.app.sites.primarySite.baseUrl }}">
+									<img class="c-header_logo -device" src="{{ craft.app.sites.primarySite.baseUrl }}assets/images/logos/valens-logo-header--home.svg">
+								</a>
+
 									<ul class="o-list-bare c-menu_main -home">
 										<li>
 											<button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" aria-hidden="false">
@@ -144,7 +149,7 @@
 											<li class="c-ecwid_item c-connect c-link c-device_link c-first-element"><a class="gwt-Anchor ecwid-productBrowser-auth-signInLink c-connect">Se connecter</a></li>
 											<li class="c-ecwid_item c-account c-link c-device_link c-first-element"><a class="c-account c-ecwid_item">Votre compte</a></li>
 											<li class="c-ecwid_item c-favorite_li c-link c-device_link"><a class="gwt-Anchor c-favorite ecwid-productBrowser-auth-accountLink c-ecwid_item">Favoris</a></li>        
-										<li class="c-language-switcher c-device_link">
+										<li class="c-language-switcher c-device_link ">
 								    		{% set currentSite = craft.app.sites.currentSite %}
 											{% for siteInGroup in currentSite.getGroup.getSites() %}
 												{% if siteInGroup.id == entry.siteId %}
