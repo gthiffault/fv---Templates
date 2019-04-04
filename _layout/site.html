@@ -8,6 +8,7 @@
 			<link rel="stylesheet" href="https://use.typekit.net/xvc4arx.css">
 
 		</head>
+		{% set pages = craft.entries.section('menuMain').level(1).all() %}
 		<body id="barba-wrapper" class="{{entry.type}}">	
 			                                    <script type="text/javascript" src="https://app.ecwid.com/script.js?4227048" charset="utf-8"></script>
 			                                                            <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?4227048&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script> 
@@ -88,6 +89,16 @@
 								{% endif %}
 							</div>
 							<div class="c-header_nav_item -menu">
+
+										<nav class="c-menu_main-desktop">
+    <ul>
+        {% for page in pages %}
+            <li><a href="{{page.txtImgLink.getUrl()}}">{{ page.title }}</a></li>
+        {% endfor %}
+ </ul>										
+ </nav>
+
+								
 								<ul class="c-header_nav_ul_am">
 {# 									<li><a class="c-btn c-btn--primary" href="http://valens.test/nos-produits#">Commandez en ligne</a></li>
 	 #}									
@@ -110,6 +121,7 @@
 										        </g>
 										    </g>
 										</svg>	
+
 										<ul class="c-account-management_submenu">
 											<li class="c-ecwid_item c-connect c-link"><a class="gwt-Anchor ecwid-productBrowser-auth-signInLink c-connect">Se connecter</a></li>
 											<li class="c-ecwid_item c-account c-link"><a class="c-account c-ecwid_item">Votre compte</a></li>
@@ -139,7 +151,7 @@
 						<div class="o-wrapper">
 						<div class="c-menu_wra">
 							<div class="c-page-padding_three">
-{% set pages = craft.entries.section('menuMain').level(1).all() %}
+
 <nav>
     <ul>
         {% for page in pages %}
